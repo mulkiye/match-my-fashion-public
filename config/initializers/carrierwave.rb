@@ -3,7 +3,7 @@ CarrierWave.configure do |config|
   config.ignore_processing_errors = false
   config.ignore_download_errors = false
 
-  if ENV.has_key? 'S3_KEY' and ENV.has_key? 'S3_SECRET'
+  if ENV.has_key? 'AWS_ACCESS_KEY' and ENV.has_key? 'AWS_SECRET_KEY'
     puts "Image Host: AWS"
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
