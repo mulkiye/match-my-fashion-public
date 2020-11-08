@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       aws_access_key_id: ENV['S3_KEY'],
       aws_secret_access_key: ENV['S3_SECRET'],
     }
-    config.fog_directory = 'fashionnxt-test'
+    config.fog_directory = 'fashionnxt-cc'
     config.storage = :fog
   else
     puts "Image Host: local filesystem"
