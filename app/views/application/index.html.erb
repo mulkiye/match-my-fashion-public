@@ -173,6 +173,7 @@
 			</div>
 		</div>-->
 		<div class="info-block style-3">
+
       <div class="btn-group">
         <div class="be-large-post-align ">
           <h3 class="info-block-label">Recent Activities</h3>
@@ -182,11 +183,15 @@
         <button id="Designer">Designer</button>
         <button id="Agent">Agent</button>
       </div>
+
+			<div class="be-large-post-align "><h3 class="info-block-label">Recent Activities</h3></div>
+
 		</div>
 		<div class="container-fluid custom-container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div id="container-mix"  class="row _post-container_">
+
 
 							<div class="category-1 mix custom-column-5">
 								<div class="be-post" id="Model1">
@@ -256,6 +261,20 @@
               </div>
             </div>
 
+						<% @users.each do |info| %>
+							<div class="category-1 mix custom-column-5">
+								<div class="be-post">
+									<a href="<%= show_profile_show_profile_path(:user_key => info.userKey) %>" class="be-img-block">
+									<% if info.profile_picture? %>
+									<img src="<%= info.profile_picture.url %>" alt="omg">
+									<% else %>
+									<img class="profile-img" src="<%= asset_path 'avatar-icon.png' %>">
+									<% end %>
+									</a>
+									<a href="<%= show_profile_show_profile_path(:user_key => info.userKey) %>" class="be-post-title"><%= info.first_name %> <%= info.last_name %><br><%= info.attribute_values[:job_name] %><br><%=info.city + ", " + info.state%></a>
+								</div>
+							</div>
+						<% end %>
 					</div>
 				</div>
 

@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 // A $( document ).ready() block.
 $( document ).ready(function() {
     $("#Model1").show();
