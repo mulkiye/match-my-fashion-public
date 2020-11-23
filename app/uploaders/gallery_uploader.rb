@@ -1,7 +1,7 @@
 class GalleryUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   if ENV.has_key? 'AWS_ACCESS_KEY' and ENV.has_key? 'AWS_SECRET_KEY'
@@ -26,6 +26,10 @@ class GalleryUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
+    #process :resize_to_fit => [400, 400]
+    process :resize_to_fill => [300, 300]
+   # process :resize_and_pad => [400, 400, background = :transparent, gravity = 'Center']
+
    def scale(width, height)
      # do something
    end
